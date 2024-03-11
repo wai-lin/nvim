@@ -4,6 +4,9 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Show Dev Icons
+vim.g.has_nerd_font = false
+
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- For more options, you can see `:help option-list`
@@ -27,6 +30,11 @@ vim.opt.clipboard = "unnamedplus"
 
 -- Enable break indent
 vim.opt.breakindent = true
+
+-- Indent size
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
 
 -- Save undo history
 vim.opt.undofile = true

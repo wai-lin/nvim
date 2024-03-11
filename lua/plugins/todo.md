@@ -1,4 +1,4 @@
-- [ ] Oil.nvim
+- [x] Oil.nvim
 - [ ] Treesitter
 - [ ] Telescope
 - [ ] LSP

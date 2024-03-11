@@ -2,8 +2,14 @@ return {
 	"stevearc/oil.nvim",
 	lazy = false,
 	config = function()
+		local columns = {}
+		-- Show icons when nerd font is enabled
+		if (vim.g.has_nerd_font == true) then
+			table.insert(columns, "icon")
+		end
+
 		require("oil").setup({
-			columns = {},
+			columns = columns,
 			float = { max_width = 100 },
 		})
 
