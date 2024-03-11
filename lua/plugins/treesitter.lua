@@ -19,6 +19,7 @@ return {
 				"ssh_config",
 				"vim",
 				"vimdoc",
+				"comment",
 
 				"html",
 				"css",
