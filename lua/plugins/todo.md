@@ -1,6 +1,6 @@
 - [x] Oil.nvim
-- [ ] Treesitter
-- [ ] Telescope
+- [x] Treesitter
+- [x] Telescope
 - [ ] LSP
 - [ ] Code Completation
 - [ ] Formatter
