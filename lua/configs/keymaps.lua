@@ -30,9 +30,33 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left wind
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+-- Move focus from Terminal mode
+vim.keymap.set("t", "<C-h>", "<cmd>wincmd h<CR>", { desc = "Move focus to left window" })
+vim.keymap.set("t", "<C-l>", "<cmd>wincmd l<CR>", { desc = "Move focus to right window" })
+vim.keymap.set("t", "<C-j>", "<cmd>wincmd j<CR>", { desc = "Move focus to lower window" })
+vim.keymap.set("t", "<C-k>", "<cmd>wincmd k<CR>", { desc = "Move focus to upper window" })
+
+-- Resize windows
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { desc = "Resize window to left" })
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "Resize window to right" })
+vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", { desc = "Resize window to upper" })
+vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", { desc = "Resize window to lower" })
+-- Resize terminal
+vim.keymap.set("t", "<C-Left>", "<cmd>vertical resize -2<CR>", { desc = "Resize window to left" })
+vim.keymap.set("t", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Resize window to right" })
+vim.keymap.set("t", "<C-Up>", "<cmd>resize -2<CR>", { desc = "Resize window to upper" })
+vim.keymap.set("t", "<C-Down>", "<cmd>resize +2<CR>", { desc = "Resize window to lower" })
+
 
 -- Lazy command mode with `;` instead of `:`
 vim.keymap.set("n", ";", ":", { desc = "Lazy command mode with `;`" })
 
 -- Escape to Normal mode with `jk`
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Escape to Normal mode" })
+
+-- Close current buffer
+vim.keymap.set("n", "<leader>x", "<CMD>bd<CR>", { desc = "Close current buffer" })
+
+-- Indent while keeping visual mode
+vim.keymap.set("v", "<", "<gv", { desc = "Indent left and keep visual mode" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent right and keep visual mode" })

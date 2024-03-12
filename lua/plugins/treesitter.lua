@@ -20,6 +20,8 @@ return {
 				"vim",
 				"vimdoc",
 				"comment",
+				"gitcommit",
+				"gitignore",
 
 				"html",
 				"css",
@@ -48,4 +50,3 @@ return {
 		})
 	end,
 }
-
