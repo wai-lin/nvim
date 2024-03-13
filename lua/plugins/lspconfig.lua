@@ -1,26 +1,21 @@
 local servers = {
 	html = {},
 	cssls = {},
-	tsserver = {},
-	eslint = {},
-	tailwindcss = {},
-	volar = {
-		filetypes = { "vue" },
+	tsserver = {
+		filetypes = { "javascript", "typescript", "vue" },
 		init_options = {
-			typescript = {
-				tsdk = "/Users/wai-lin/Library/pnpm/nodejs/20.11.1/lib/node_modules/typescript/lib"
-			},
-		},
-		settings = {
-			volar = {
-				codeLens = {
-					references = true,
-					pugTools = true,
-					scriptSetupTools = true,
+			plugins = {
+				{
+					name = "@vue/typescript-plugin",
+					location = "/Users/wai-lin/Library/pnpm/nodejs/20.11.1/lib/node_modules/@vue/typescript-plugin",
+					languages = { "javascript", "typescript", "vue" },
 				},
 			},
 		},
 	},
+	eslint = {},
+	tailwindcss = {},
+	volar = {},
 	svelte = {},
 	jsonls = {},
 
@@ -30,7 +25,6 @@ local servers = {
 	ocamllsp = {},
 	elixirls = {},
 
-	stylua = {},
 	lua_ls = {
 		settings = {
 			Lua = {
@@ -121,9 +115,5 @@ return {
 		for server_name in pairs(servers) do
 			require("lspconfig")[server_name].setup(servers[server_name] or {})
 		end
-
-		-- NOTE : Separately setup Vue3 since it's required special setup
-		-- https://github.com/vuejs/language-tools/discussions/606
-		-- require("plugins.lsp_configs.volar")
 	end,
 }
