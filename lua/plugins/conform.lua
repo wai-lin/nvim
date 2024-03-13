@@ -5,7 +5,8 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			javascript = { { "prettierd", "prettier" } },
-			go = { "gofumpt", "goimports", "goimports-reviser" },
+			vue = { { "prettierd", "prettier" } },
+			go = { "gofumpt", "goimports-reviser" },
 		},
 	},
 	config = function()
@@ -16,9 +17,24 @@ return {
 				range = {
 					start = { args.line1, 0 },
 					["end"] = { args.line2, end_line:len() },
-				 }
-		  end
-		  require("conform").format({ async = true, lsp_fallback = true, range = range })
+				}
+			end
+
+			local filetype = vim.bo.filetype
+			local lsp_fallback = function()
+				if filetype == "vue" then
+					return false
+				else
+					return true
+				end
+			end
+			print(filetype, lsp_fallback())
+
+			require("conform").format({
+				async = true,
+				lsp_fallback = lsp_fallback(),
+				range = range,
+			})
 		end, { range = true })
 
 		vim.keymap.set("n", "<leader>fm", "<CMD>Format<CR>", { desc = "[F]or[m]at Current Buffer" })
