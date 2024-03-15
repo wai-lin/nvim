@@ -1,15 +1,17 @@
+local formatters_by_ft = {
+	lua = { "stylua" },
+	javascript = { { "prettierd", "prettier" } },
+	typescript = { { "prettierd", "prettier" } },
+	vue = { { "prettierd", "prettier" } },
+	go = { "gofumpt", "goimports-reviser" },
+}
+
 return {
 	"stevearc/conform.nvim",
 	event = "VimEnter",
 	config = function()
 		require("conform").setup({
-			formatters_by_ft = {
-				lua = { "stylua" },
-				javascript = { { "prettierd", "prettier" } },
-				typescript = { { "prettierd", "prettier" } },
-				vue = { { "prettierd", "prettier" } },
-				go = { "gofumpt", "goimports-reviser" },
-			},
+			formatters_by_ft = formatters_by_ft,
 		})
 
 		vim.api.nvim_create_user_command("Format", function(args)
