@@ -1,15 +1,17 @@
 return {
 	"stevearc/conform.nvim",
 	event = "VimEnter",
-	opts = {
-		formatters_by_ft = {
-			lua = { "stylua" },
-			javascript = { { "prettierd", "prettier" } },
-			vue = { { "prettierd", "prettier" } },
-			go = { "gofumpt", "goimports-reviser" },
-		},
-	},
 	config = function()
+		require("conform").setup({
+			formatters_by_ft = {
+				lua = { "stylua" },
+				javascript = { { "prettierd", "prettier" } },
+				typescript = { { "prettierd", "prettier" } },
+				vue = { { "prettierd", "prettier" } },
+				go = { "gofumpt", "goimports-reviser" },
+			},
+		})
+
 		vim.api.nvim_create_user_command("Format", function(args)
 			local range = nil
 			if args.count ~= -1 then
@@ -20,19 +22,9 @@ return {
 				}
 			end
 
-			local filetype = vim.bo.filetype
-			local lsp_fallback = function()
-				if filetype == "vue" then
-					return false
-				else
-					return true
-				end
-			end
-			print(filetype, lsp_fallback())
-
 			require("conform").format({
 				async = true,
-				lsp_fallback = lsp_fallback(),
+				lsp_fallback = true,
 				range = range,
 			})
 		end, { range = true })
