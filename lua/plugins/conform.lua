@@ -1,8 +1,8 @@
 local formatters_by_ft = {
 	lua = { "stylua" },
-	javascript = { { "prettierd", "prettier" } },
-	typescript = { { "prettierd", "prettier" } },
-	vue = { { "prettierd", "prettier" } },
+	javascript = { "prettier" },
+	typescript = { "prettier" },
+	vue = { "prettier" },
 	go = { "gofumpt", "goimports-reviser" },
 }
 
