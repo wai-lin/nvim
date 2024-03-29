@@ -7,6 +7,9 @@ vim.g.maplocalleader = " "
 -- Show Dev Icons
 vim.g.has_nerd_font = false
 
+-- Speed up loading by disabling ts context commentstring on start up
+vim.g.skip_ts_context_commentstring_module = true
+
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- For more options, you can see `:help option-list`
@@ -58,7 +61,7 @@ vim.opt.splitbelow = true
 --  See `:help "list"`
 --  and `:help "listchars"`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
@@ -68,5 +71,3 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
-
-
