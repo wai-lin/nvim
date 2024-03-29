@@ -2,7 +2,7 @@ local servers = {
 	html = {},
 	cssls = {},
 	tsserver = {
-		filetypes = { "javascript", "typescript", "vue" },
+		filetypes = { "javascriptreact", "typescriptreact", "javascript", "typescript", "vue" },
 		init_options = {
 			plugins = {
 				{
@@ -28,12 +28,12 @@ local servers = {
 	lua_ls = {
 		settings = {
 			Lua = {
-				runtime = { version = 'LuaJIT' },
+				runtime = { version = "LuaJIT" },
 				workspace = {
 					checkThirdParty = false,
 					library = {
-						[vim.fn.expand "$VIMRUNTIME/lua"] = true,
-						[vim.fn.stdpath "config" .. "/lua"] = true,
+						[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+						[vim.fn.stdpath("config") .. "/lua"] = true,
 					},
 					-- library = {
 					-- 	'${3rd}/luv/library',
@@ -41,7 +41,7 @@ local servers = {
 					-- },
 				},
 				completion = {
-					callSnippet = 'Replace',
+					callSnippet = "Replace",
 				},
 			},
 		},
@@ -85,7 +85,7 @@ local on_attach = function()
 					callback = vim.lsp.buf.clear_references,
 				})
 			end
-		end
+		end,
 	})
 end
 
@@ -102,7 +102,7 @@ return {
 		on_attach()
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
-		capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 		require("mason").setup()
 
