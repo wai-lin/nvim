@@ -101,6 +101,7 @@ return {
 	config = function()
 		on_attach()
 
+		-- Create code completion config
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
@@ -112,7 +113,10 @@ return {
 		})
 
 		for server_name in pairs(servers) do
-			require("lspconfig")[server_name].setup(servers[server_name] or {})
+			local conf = servers[server_name] or {}
+			conf["capabilities"] = capabilities -- Add code completion for each LSP
+
+			require("lspconfig")[server_name].setup(conf)
 		end
 	end,
 }
