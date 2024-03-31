@@ -3,19 +3,9 @@ local servers = {
 	cssls = {},
 	tsserver = {
 		filetypes = { "javascriptreact", "typescriptreact", "javascript", "typescript" },
-		init_options = {
-			plugins = {
-				{
-					name = "@vue/typescript-plugin",
-					location = "/Users/wai-lin/Library/pnpm/nodejs/20.11.1/lib/node_modules/@vue/typescript-plugin",
-					languages = { "javascriptreact", "typescriptreact", "javascript", "typescript", "vue" },
-				},
-			},
-		},
 	},
 	eslint = {},
 	tailwindcss = {},
-	volar = {},
 	svelte = {},
 	jsonls = {},
 
