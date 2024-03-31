@@ -2,13 +2,13 @@ local servers = {
 	html = {},
 	cssls = {},
 	tsserver = {
-		filetypes = { "javascriptreact", "typescriptreact", "javascript", "typescript", "vue" },
+		filetypes = { "javascriptreact", "typescriptreact", "javascript", "typescript" },
 		init_options = {
 			plugins = {
 				{
 					name = "@vue/typescript-plugin",
 					location = "/Users/wai-lin/Library/pnpm/nodejs/20.11.1/lib/node_modules/@vue/typescript-plugin",
-					languages = { "javascript", "typescript", "vue" },
+					languages = { "javascriptreact", "typescriptreact", "javascript", "typescript", "vue" },
 				},
 			},
 		},
@@ -113,10 +113,10 @@ return {
 		})
 
 		for server_name in pairs(servers) do
-			local conf = servers[server_name] or {}
+			local conf = servers[server_name]
 			conf["capabilities"] = capabilities -- Add code completion for each LSP
 
-			require("lspconfig")[server_name].setup(conf)
+			require("lspconfig")[server_name].setup(servers[server_name] and conf or {})
 		end
 	end,
 }
