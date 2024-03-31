@@ -4,6 +4,7 @@ local formatters_by_ft = {
 	typescript = { { "prettierd", "prettier" } },
 	javascriptreact = { { "prettierd", "prettier" } },
 	typescriptreact = { { "prettierd", "prettier" } },
+	markdown = { { "prettierd", "prettier" } },
 	vue = { { "prettierd", "prettier" } },
 	go = { "gofumpt", "goimports-reviser" },
 }

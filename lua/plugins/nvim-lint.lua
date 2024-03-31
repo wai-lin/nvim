@@ -5,6 +5,8 @@ return {
 		linters_by_ft = {
 			javascript = { "eslint" },
 			typescript = { "eslint" },
+			javascriptreact = { "eslint" },
+			typescriptreact = { "eslint" },
 		},
 	},
 	config = function()
