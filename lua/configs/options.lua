@@ -71,3 +71,14 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- [[ Unsupported Languages ]]
+-- Enabling the unsupported languages
+
+-- Register .mdx files as markdown files.
+vim.filetype.add({
+	extension = {
+		mdx = "mdx",
+	},
+})
+vim.treesitter.language.register("markdown", "mdx") -- the mdx filetype will use the markdown parser and queries.

@@ -1,5 +1,6 @@
 local formatters_by_ft = {
 	lua = { "stylua" },
+	astro = { { "prettierd", "prettier" } },
 	javascript = { { "prettierd", "prettier" } },
 	typescript = { { "prettierd", "prettier" } },
 	javascriptreact = { { "prettierd", "prettier" } },

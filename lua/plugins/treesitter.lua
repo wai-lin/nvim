@@ -15,6 +15,7 @@ local ensure_installed = {
 	"html",
 	"css",
 	"typescript",
+	"astro",
 	"vue",
 	"svelte",
 	"graphql",

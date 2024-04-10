@@ -5,16 +5,7 @@ return {
 	priority = 1000,
 	config = function()
 		local bg_color = "#262220"
-		local html_tag = ""
 
-		-- custom_highlights = function(colors)
-		--         return {
-		--             Comment = { fg = colors.flamingo },
-		--             TabLineSel = { bg = colors.pink },
-		--             CmpBorder = { fg = colors.surface2 },
-		--             Pmenu = { bg = colors.none },
-		--         }
-		-- end
 		require("catppuccin").setup({
 			integrations = {
 				cmp = true,

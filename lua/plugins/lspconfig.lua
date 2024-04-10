@@ -5,7 +5,19 @@ local servers = {
 		filetypes = { "javascriptreact", "typescriptreact", "javascript", "typescript" },
 	},
 	eslint = {},
-	tailwindcss = {},
+	tailwindcss = {
+		settings = {
+			tailwindCSS = {
+				experimental = {
+					classRegex = {
+						{ "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+						{ "cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
+					},
+				},
+			},
+		},
+	},
+	astro = {},
 	svelte = {},
 	jsonls = {},
 
