@@ -1,0 +1,11 @@
+{
+  "Function": {
+    "prefix": "func",
+    "desc": "An empty lua function.",
+    "body": [
+      "function ${1:name}(${2:args})",
+      "  ${3:function_body}",
+      "end"
+    ]
+  }
+}
