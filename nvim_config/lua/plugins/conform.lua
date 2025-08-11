@@ -7,6 +7,8 @@ return {
         typescript = { "prettierd", stop_after_first = true },
         javascriptreact = { "prettierd", stop_after_first = true },
         typescriptreact = { "prettierd", stop_after_first = true },
+        vue = { "prettierd", stop_after_first = true },
+        ruby = { "rubocop", stop_after_first = true },
       },
     },
   },
