@@ -1,15 +1,27 @@
 return {
+  -- {
+  --   "Mofiqul/vscode.nvim",
+  --   opts = {
+  --     style = "dark",
+  --     italic_comments = true,
+  --     underline_links = true,
+  --   },
+  -- },
   {
-    "Mofiqul/vscode.nvim",
+    "loctvl842/monokai-pro.nvim",
     opts = {
-      style = "dark",
+      transparent_background = true,
+      terminal_colors = true,
+      styles = {
+        comment = { italic = true },
+      },
     },
   },
 
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "vscode",
+      colorscheme = "monokai-pro",
     },
   },
 
@@ -39,7 +51,7 @@ return {
     "nvim-lualine/lualine.nvim",
     opts = {
       options = {
-        theme = "vscode",
+        theme = "monokai-pro",
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
       },
