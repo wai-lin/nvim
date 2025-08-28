@@ -107,7 +107,6 @@ return {
 				},
 
 				vue_ls = {},
-				ts_ls = {},
 				vtsls = {
 					settings = {
 						vtsls = {
