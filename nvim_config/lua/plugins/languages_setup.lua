@@ -1,3 +1,6 @@
+local mason_packages = vim.fn.stdpath("data") .. "/mason/packages"
+local vue_language_server_path = mason_packages .. "/vue-language-server/node_modules/@vue/language-server"
+
 return {
 	{
 		"stevearc/conform.nvim",
@@ -102,7 +105,26 @@ return {
 						},
 					},
 				},
+
+				vue_ls = {},
 				ts_ls = {},
+				vtsls = {
+					settings = {
+						vtsls = {
+							tsserver = {
+								globalPlugins = {
+									{
+										name = "@vue/typescript-plugin",
+										location = vue_language_server_path,
+										languages = { "vue" },
+										configNamespace = "typescript",
+									},
+								},
+							},
+						},
+					},
+					filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact", "vue" },
+				},
 				eslint_d = {},
 				tailwindcss = {},
 			},
