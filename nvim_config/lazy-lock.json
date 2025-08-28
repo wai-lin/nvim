@@ -6,6 +6,7 @@
   "kanagawa.nvim": { "branch": "master", "commit": "debe91547d7fb1eef34ce26a5106f277fbfdd109" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "1ec4da522fa49dcecee8d190efda273464dd2192" },
+  "mason-tool-installer.nvim": { "branch": "main", "commit": "517ef5994ef9d6b738322664d5fdd948f0fdeb46" },
   "mason.nvim": { "branch": "main", "commit": "7dc4facca9702f95353d5a1f87daf23d78e31c2a" },
   "mini.nvim": { "branch": "main", "commit": "9a92084b3e9595568c0b07b62ad3c43249fa91fb" },
   "neodev.nvim": { "branch": "main", "commit": "46aa467dca16cf3dfe27098042402066d2ae242d" },
