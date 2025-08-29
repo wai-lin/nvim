@@ -3,6 +3,37 @@ local vue_language_server_path = mason_packages .. "/vue-language-server/node_mo
 
 return {
 	{
+		"nvim-treesitter/nvim-treesitter",
+		branch = "master",
+		lazy = false,
+		build = ":TSUpdate",
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				auto_install = true,
+				highlight = {
+					enabled = true,
+					disable = function(lang, buf)
+						local max_filesize = 100 * 1024 -- 100 KB
+						local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+						if ok and stats and stats.size > max_filesize then
+							return true
+						end
+					end,
+				},
+				ensure_installed = {
+					"lua",
+					"html",
+					"css",
+					"javascript",
+					"typescript",
+					"vue",
+					"php",
+				},
+			})
+		end,
+	},
+
+	{
 		"stevearc/conform.nvim",
 		keys = {
 			{
@@ -30,6 +61,7 @@ return {
 				typescript = { "prettierd" },
 				javascriptreact = { "prettierd" },
 				typescriptreact = { "prettierd" },
+				vue = { "prettierd" },
 			},
 		},
 	},
@@ -52,13 +84,13 @@ return {
 			sources = {
 				compact = {},
 				default = { "lsp", "path", "snippets", "buffer" },
-				-- providers = {
-				-- 	lsp = {
-				-- 		name = "lsp",
-				-- 		enabled = true,
-				-- 		module = "blink.cmp.sources.lsp",
-				-- 	},
-				-- },
+				providers = {
+					lsp = {
+						name = "lsp",
+						enabled = true,
+						module = "blink.cmp.sources.lsp",
+					},
+				},
 			},
 		},
 		opts_extends = { "sources.default" },
