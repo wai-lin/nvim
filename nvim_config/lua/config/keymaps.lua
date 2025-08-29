@@ -18,6 +18,12 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left wind
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+vim.keymap.set("n", "<C-->", "<C-w>-", { desc = "Descrease window height" })
+vim.keymap.set("n", "<C-=>", "<C-w>+", { desc = "Increase window height" })
+vim.keymap.set("n", "<M-->", "<C-w><", { desc = "Descrease window width" })
+vim.keymap.set("n", "<M-=>", "<C-w>>", { desc = "Increase window width" })
+vim.keymap.set("n", "<M-h>", "<C-w>_", { desc = "Maximize the height of current window"})
+vim.keymap.set("n", "<M-w>", "<C-w>|", { desc = "Maximize the width of current window"})
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
@@ -86,7 +92,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		-- or a suggestion from your LSP for this to activate.
 		map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
-		-- WARN: This is not Goto Definition, this is Goto Declaration.
+		-- NOTE: This is not Goto Definition, this is Goto Declaration.
 		--  For example, in C this would take you to the header.
 		map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
@@ -114,3 +120,4 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 	end,
 })
+
