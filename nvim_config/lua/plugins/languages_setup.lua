@@ -53,6 +53,8 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 
+				php = { "pint" },
+
 				html = { "prettierd" },
 				css = { "prettierd" },
 				json = { "prettierd" },
@@ -117,6 +119,7 @@ return {
 				"lua_ls",
 				"eslint_d",
 				"ts_ls",
+				"vtsls",
 			},
 		},
 	},
@@ -158,6 +161,7 @@ return {
 				},
 				eslint_d = {},
 				tailwindcss = {},
+				intelephense = {},
 			},
 		},
 		config = function(_, opts)
