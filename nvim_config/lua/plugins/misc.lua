@@ -28,4 +28,12 @@ return {
 			},
 		},
 	},
+
+	{
+		"folke/zen-mode.nvim",
+		opts = {},
+		config = function()
+			vim.keymap.set("n", "<leader>zm", "<CMD>lua require('zen-mode').toggle({})<CR>", { desc = "[Z]en [M]ode" })
+		end,
+	},
 }
