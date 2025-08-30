@@ -28,6 +28,7 @@ return {
 					"typescript",
 					"vue",
 					"php",
+					"svelte",
 				},
 			})
 		end,
@@ -64,6 +65,7 @@ return {
 				javascriptreact = { "prettierd" },
 				typescriptreact = { "prettierd" },
 				vue = { "prettierd" },
+				svelte = { "prettierd" },
 			},
 		},
 	},
@@ -141,8 +143,11 @@ return {
 					},
 				},
 
-				vue_ls = {},
-				vtsls = {
+				intelephense = {}, -- Licence Key is set at ~/intelephense/licence.txt
+
+				html = {},
+				css = {},
+				vtsls = { -- Typescript server that also support .vue files
 					settings = {
 						vtsls = {
 							tsserver = {
@@ -159,9 +164,11 @@ return {
 					},
 					filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact", "vue" },
 				},
+
+				svelte = {},
+				vue_ls = {},
 				eslint_d = {},
 				tailwindcss = {},
-				intelephense = {},
 			},
 		},
 		config = function(_, opts)
