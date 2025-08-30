@@ -5,6 +5,7 @@ return {
 	config = function()
 		require("telescope").setup({
 			defaults = {
+				layout_strategy = "vertical",
 				file_ignore_patterns = {
 					"node_modules",
 				},
@@ -12,9 +13,8 @@ return {
 		})
 
 		local builtin = function(picker)
-			return "<CMD>lua require('telescope.builtin')."
-				.. picker
-				.. "(require('telescope.themes').get_dropdown({}))<CR><ESC>"
+			-- print(vim.inspect(require("telescope.themes").get_dropdown({})))
+			return "<CMD>lua require('telescope.builtin')." .. picker .. "()<CR><ESC>"
 		end
 
 		vim.keymap.set("n", "<leader>ff", builtin("find_files"), { desc = "Telescope: Find files" })
