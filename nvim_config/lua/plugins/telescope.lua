@@ -10,6 +10,9 @@ return {
 					"node_modules",
 				},
 			},
+			pickers = {
+				find_files = { hidden = true },
+			},
 		})
 
 		local builtin = function(picker)
