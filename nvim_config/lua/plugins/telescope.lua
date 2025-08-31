@@ -10,17 +10,21 @@ return {
 					"node_modules",
 				},
 			},
-			pickers = {
-				find_files = { hidden = true },
-			},
 		})
 
-		local builtin = function(picker)
-			-- print(vim.inspect(require("telescope.themes").get_dropdown({})))
-			return "<CMD>lua require('telescope.builtin')." .. picker .. "()<CR><ESC>"
+		local builtin = function(picker, args)
+			return function()
+				require("telescope.builtin")[picker](args or {})
+			end
 		end
 
 		vim.keymap.set("n", "<leader>ff", builtin("find_files"), { desc = "Telescope: Find files" })
+		vim.keymap.set(
+			"n",
+			"<leader>hf",
+			builtin("find_files", { hidden = true, no_ignore = true }),
+			{ desc = "Telescope: Find files (hidden:true,ignore:true)" }
+		)
 		vim.keymap.set("n", "<leader>fg", builtin("live_grep"), { desc = "Telescope: Live grep" })
 		vim.keymap.set("n", "<leader>fb", builtin("buffers"), { desc = "Telescope: Buffers" })
 		vim.keymap.set("n", "<leader>fr", builtin("lsp_references"), { desc = "Telescope: LSP References" })
