@@ -9,6 +9,9 @@ return {
 		build = ":TSUpdate",
 		config = function()
 			require("nvim-treesitter.configs").setup({
+				sync_install = true,
+				modules = {},
+				ignore_install = {},
 				auto_install = true,
 				highlight = {
 					enable = true,
@@ -71,6 +74,16 @@ return {
 	},
 
 	{
+		"folke/lazydev.nvim",
+		ft = "lua",
+		opts = {
+			library = {
+				{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+			},
+		},
+	},
+
+	{
 		"saghen/blink.cmp",
 		version = "1.*",
 		enabled = true,
@@ -87,10 +100,15 @@ return {
 			},
 			sources = {
 				compact = {},
-				default = { "lsp", "path", "snippets", "buffer" },
+				default = { "lazydev", "lsp", "path", "snippets", "buffer" },
 				providers = {
+					lazydev = {
+						name = "LazyDev",
+						module = "lazydev.integrations.blink",
+						score_offset = 100,
+					},
 					lsp = {
-						name = "lsp",
+						name = "LSP",
 						enabled = true,
 						module = "blink.cmp.sources.lsp",
 					},
