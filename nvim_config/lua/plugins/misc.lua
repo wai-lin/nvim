@@ -1,6 +1,7 @@
 return {
 	"folke/neodev.nvim",
 	"folke/which-key.nvim",
+	"MunifTanjim/nui.nvim",
 
 	{
 		"saghen/blink.nvim",
