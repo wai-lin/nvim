@@ -42,17 +42,24 @@ return {
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = {
-			gui_style = {
-				fg = "BOLD", -- The gui style to use for the fg highlight group.
-				bg = "BOLD", -- The gui style to use for the bg highlight group.
-			},
+			gui_style = { fg = "BOLD", bg = "BOLD" },
+			highlight = { before = "", keyword = "wide_fg", after = "" },
 			colors = {
-				error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
-				warning = { "DiagnosticWarn", "WarningMsg", "#FBBF24" },
-				info = { "DiagnosticInfo", "#2563EB" },
-				hint = { "DiagnosticHint", "#10B981" },
-				default = { "Identifier", "#7C3AED" },
-				test = { "Identifier", "#FF00FF" },
+				error = { "DiagnosticError", "ErrorMsg", "#fb2c36" },
+				warning = { "DiagnosticWarn", "WarningMsg", "#ff6900" },
+				info = { "DiagnosticInfo", "#00a6f4" },
+				hint = { "DiagnosticHint", "#96f7e4" },
+				default = { "Identifier", "#8e51ff" },
+				test = { "Identifier", "#f0b100" },
+			},
+			keywords = {
+				FIX = { icon = " ", color = "error", alt = { "FIXME", "BUG", "FIXIT", "ISSUE" } },
+				TODO = { icon = " ", color = "info" },
+				HACK = { icon = " ", color = "warning" },
+				WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
+				PERF = { icon = " ", color = "default", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+				NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+				TEST = { icon = "󰙨 ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
 			},
 		},
 		config = function(_, opts)
