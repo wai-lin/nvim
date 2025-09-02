@@ -63,12 +63,20 @@ return {
 				css = { "prettierd" },
 				json = { "prettierd" },
 				jsonc = { "prettierd" },
-				javascript = { "prettierd" },
-				typescript = { "prettierd" },
-				javascriptreact = { "prettierd" },
-				typescriptreact = { "prettierd" },
-				vue = { "prettierd" },
-				svelte = { "prettierd" },
+				-- NOTE:
+				-- JS Frameworks doesn't need prettired.
+				-- Since I use eslint_d lsp to format.
+				--
+				--
+				-- INFO: uncomment the following configs
+				-- if you want to enable formatting with prettierd.
+				--
+				-- javascript = { "prettierd" },
+				-- javascriptreact = { "prettierd" },
+				-- typescript = { "prettierd" },
+				-- typescriptreact = { "prettierd" },
+				-- vue = { "prettierd" },
+				-- svelte = { "prettierd" },
 			},
 		},
 	},
@@ -137,9 +145,9 @@ return {
 			auto_update = true,
 			ensure_installed = {
 				"lua_ls",
-				"eslint_d",
 				"ts_ls",
 				"vtsls",
+				"eslint_d",
 			},
 		},
 	},
