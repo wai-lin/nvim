@@ -15,7 +15,6 @@ return {
 		opts = {},
 
 		config = function()
-			require("mini.icons").setup()
 			require("mini.notify").setup()
 			require("mini.pairs").setup()
 			require("mini.ai").setup()

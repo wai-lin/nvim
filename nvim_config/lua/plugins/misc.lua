@@ -2,6 +2,7 @@ return {
 	"folke/neodev.nvim",
 	"folke/which-key.nvim",
 	"MunifTanjim/nui.nvim",
+	{ "nvim-tree/nvim-web-devicons", opts = {} },
 
 	{
 		"saghen/blink.nvim",
