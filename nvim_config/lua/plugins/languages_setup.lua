@@ -59,10 +59,6 @@ return {
 
 				php = { "pint" },
 
-				html = { "prettierd" },
-				css = { "prettierd" },
-				json = { "prettierd" },
-				jsonc = { "prettierd" },
 				-- NOTE:
 				-- JS Frameworks doesn't need prettired.
 				-- Since I use eslint_d lsp to format.
@@ -77,6 +73,10 @@ return {
 				-- typescriptreact = { "prettierd" },
 				-- vue = { "prettierd" },
 				-- svelte = { "prettierd" },
+				-- json = { "prettierd" },
+				-- jsonc = { "prettierd" },
+				-- html = { "prettierd" },
+				-- css = { "prettierd" },
 			},
 		},
 	},
