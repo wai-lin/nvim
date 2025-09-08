@@ -148,6 +148,9 @@ return {
 				"ts_ls",
 				"vtsls",
 				"eslint_d",
+				"solargraph",
+				"intelephense",
+				"pint",
 			},
 		},
 	},
@@ -170,6 +173,7 @@ return {
 				},
 
 				intelephense = {}, -- Licence Key is set at ~/intelephense/licence.txt
+				solargraph = {},
 
 				html = {},
 				css = {},
