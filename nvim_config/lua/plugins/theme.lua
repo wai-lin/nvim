@@ -23,14 +23,14 @@ return {
 				base05 = "#ebdbb2", -- default fg
 				base06 = "#fbf1c7", -- bright fg
 				base07 = "#fdf4c1", -- white-ish
-				base08 = "#fb4934", -- red
+				base08 = "#cc241d", -- soft red
 				base09 = "#fe8019", -- orange
 				base0A = "#fabd2f", -- yellow
 				base0B = "#b8bb26", -- green
 				base0C = "#8ec07c", -- aqua
 				base0D = "#83a598", -- blue
 				base0E = "#d3869b", -- purple
-				base0F = "#d65d0e", -- dark orange/brown
+				base0F = "#d65d0e", -- brown / dark orange
 			},
 		},
 	},
