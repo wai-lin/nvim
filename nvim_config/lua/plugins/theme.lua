@@ -1,15 +1,4 @@
 return {
-	{
-		"ellisonleao/gruvbox.nvim",
-		priority = 1000,
-		config = function()
-			require("gruvbox").setup({
-				contrast = "hard",
-			})
-			vim.cmd.colorscheme("gruvbox")
-			vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
-		end,
-	},
 	-- {
 	-- 	"rebelot/kanagawa.nvim",
 	-- 	opts = {},
@@ -17,4 +6,32 @@ return {
 	-- 		vim.cmd([[colorscheme kanagawa-dragon]])
 	-- 	end,
 	-- },
+
+	{
+		"echasnovski/mini.base16",
+		opts = {
+			use_cterm = true, -- enable 256-color compatibility for terminals
+			plugins = { default = true },
+
+			-- gruvbox super contrast
+			palette = {
+				base00 = "#1d2021", -- bg hard
+				base01 = "#282828", -- bg0
+				base02 = "#32302f", -- bg0_s
+				base03 = "#7c6f64", -- brighter gray for comments
+				base04 = "#928374", -- lighter gray
+				base05 = "#ebdbb2", -- default fg
+				base06 = "#fbf1c7", -- bright fg
+				base07 = "#fdf4c1", -- white-ish
+				base08 = "#fb4934", -- red
+				base09 = "#fe8019", -- orange
+				base0A = "#fabd2f", -- yellow
+				base0B = "#b8bb26", -- green
+				base0C = "#8ec07c", -- aqua
+				base0D = "#83a598", -- blue
+				base0E = "#d3869b", -- purple
+				base0F = "#d65d0e", -- dark orange/brown
+			},
+		},
+	},
 }
