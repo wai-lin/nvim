@@ -8,7 +8,7 @@ return {
 	-- },
 
 	{
-		"echasnovski/mini.base16",
+		"mini-nvim/mini.base16",
 		opts = {
 			use_cterm = true, -- enable 256-color compatibility for terminals
 			plugins = { default = true },
@@ -23,10 +23,10 @@ return {
 				base05 = "#ebdbb2", -- default fg
 				base06 = "#fbf1c7", -- bright fg
 				base07 = "#fdf4c1", -- white-ish
-				base08 = "#cc241d", -- soft red
+				base08 = "#ea6962", -- pastel red
 				base09 = "#fe8019", -- orange
-				base0A = "#fabd2f", -- yellow
-				base0B = "#b8bb26", -- green
+				base0A = "#b8bb26", -- green
+				base0B = "#fabd2f", -- yellow
 				base0C = "#8ec07c", -- aqua
 				base0D = "#83a598", -- blue
 				base0E = "#d3869b", -- purple
