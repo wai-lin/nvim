@@ -25,6 +25,7 @@ return {
 				},
 				ensure_installed = {
 					"lua",
+					"go",
 					"html",
 					"css",
 					"javascript",
@@ -32,6 +33,7 @@ return {
 					"vue",
 					"php",
 					"svelte",
+					"ruby",
 				},
 			})
 		end,
@@ -50,6 +52,7 @@ return {
 			},
 		},
 		opts = {
+			lsp_fallback = true,
 			format_on_save = {
 				timeout_ms = 500,
 				lsp_format = "fallback",
@@ -57,7 +60,10 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 
+				go = {},
+
 				php = { "pint" },
+				-- ruby = { "rubocob" },
 
 				-- NOTE:
 				-- JS Frameworks doesn't need prettired.
@@ -76,7 +82,17 @@ return {
 				-- json = { "prettierd" },
 				-- jsonc = { "prettierd" },
 				-- html = { "prettierd" },
-				-- css = { "prettierd" },
+				prisma = {},
+				javascript = {},
+				javascriptreact = {},
+				typescript = {},
+				typescriptreact = {},
+				vue = {},
+				svelte = {},
+				json = { "prettierd" },
+				jsonc = { "prettierd" },
+				html = { "prettierd", stop_after_first = true },
+				css = { "prettierd", stop_after_first = true },
 			},
 		},
 	},
@@ -147,10 +163,10 @@ return {
 				"lua_ls",
 				"ts_ls",
 				"vtsls",
-				"eslint_d",
-				"solargraph",
+				"eslint",
 				"intelephense",
 				"pint",
+				"ruby_lsp",
 			},
 		},
 	},
@@ -171,10 +187,15 @@ return {
 						},
 					},
 				},
+				gopls = {},
+
+				rust_analyzer = {},
 
 				intelephense = {}, -- Licence Key is set at ~/intelephense/licence.txt
-				solargraph = {},
 
+				ruby_lsp = {},
+
+				prismals = {},
 				html = {},
 				css = {},
 				vtsls = { -- Typescript server that also support .vue files
