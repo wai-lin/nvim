@@ -216,7 +216,14 @@ return {
 					filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact", "vue" },
 				},
 
-				svelte = {},
+				svelte = {
+					on_attach = function(client, bufnr)
+						if client.server_capabilities then
+							client.server_capabilities.documentFormattingProvider = false
+							client.server_capabilities.documentRangeFormattingProvider = false
+						end
+					end,
+				},
 				vue_ls = {},
 
 				tailwindcss = {},
