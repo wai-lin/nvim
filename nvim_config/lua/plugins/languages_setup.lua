@@ -1,5 +1,6 @@
 local mason_packages = vim.fn.stdpath("data") .. "/mason/packages"
 local vue_language_server_path = mason_packages .. "/vue-language-server/node_modules/@vue/language-server"
+local proj_conf = require("utils.project_config")
 
 return {
 	{
@@ -118,7 +119,10 @@ return {
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
 		opts = {
-			keymap = { preset = "default" },
+			keymap = {
+				preset = "default",
+				["<CR>"] = { "select_and_accept", "fallback" },
+			},
 			completion = {
 				documentation = { auto_show = true },
 			},
@@ -219,12 +223,31 @@ return {
 				svelte = {
 					on_attach = function(client, bufnr)
 						if client.server_capabilities then
-							client.server_capabilities.documentFormattingProvider = false
-							client.server_capabilities.documentRangeFormattingProvider = false
+							local fmt = proj_conf.get({ "lsp", "svelte", "formatting" }, nil, bufnr)
+							if fmt == false then
+								client.server_capabilities.documentFormattingProvider = false
+								client.server_capabilities.documentRangeFormattingProvider = false
+							elseif fmt == true then
+								client.server_capabilities.documentFormattingProvider = true
+								client.server_capabilities.documentRangeFormattingProvider = true
+							end
 						end
 					end,
 				},
-				vue_ls = {},
+				vue_ls = {
+					on_attach = function(client, bufnr)
+						if client.server_capabilities then
+							local fmt = proj_conf.get({ "lsp", "vue", "formatting" }, nil, bufnr)
+							if fmt == false then
+								client.server_capabilities.documentFormattingProvider = false
+								client.server_capabilities.documentRangeFormattingProvider = false
+							elseif fmt == true then
+								client.server_capabilities.documentFormattingProvider = true
+								client.server_capabilities.documentRangeFormattingProvider = true
+							end
+						end
+					end,
+				},
 
 				tailwindcss = {},
 				eslint = { -- NOTE: config is from https://github.com/antfu/eslint-config
