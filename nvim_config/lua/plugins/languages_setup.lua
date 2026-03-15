@@ -62,6 +62,8 @@ return {
 				lua = { "stylua" },
 
 				go = {},
+				gleam = {},
+				ocaml = { "ocamlformat", stop_after_first = true }, -- ocaml
 
 				php = { "pint" },
 				-- ruby = { "rubocob" },
@@ -74,26 +76,26 @@ return {
 				-- INFO: uncomment the following configs
 				-- if you want to enable formatting with prettierd.
 				--
-				-- javascript = { "prettierd" },
-				-- javascriptreact = { "prettierd" },
-				-- typescript = { "prettierd" },
-				-- typescriptreact = { "prettierd" },
-				-- vue = { "prettierd" },
-				-- svelte = { "prettierd" },
-				-- json = { "prettierd" },
-				-- jsonc = { "prettierd" },
-				-- html = { "prettierd" },
+				javascript = { "prettier" },
+				javascriptreact = { "prettier" },
+				typescript = { "prettier" },
+				typescriptreact = { "prettier" },
+				-- vue = { "prettier" },
+				-- svelte = { "prettier" },
+				-- json = { "prettier" },
+				-- jsonc = { "prettier" },
+				-- html = { "prettier" },
 				prisma = {},
-				javascript = {},
-				javascriptreact = {},
-				typescript = {},
-				typescriptreact = {},
-				vue = {},
+				-- javascript = {},
+				-- javascriptreact = {},
+				-- typescript = {},
+				-- typescriptreact = {},
+				vue = { stop_after_first = true },
 				svelte = {},
-				json = { "prettierd" },
-				jsonc = { "prettierd" },
-				html = { "prettierd", stop_after_first = true },
-				css = { "prettierd", stop_after_first = true },
+				json = { "prettier" },
+				jsonc = { "prettier" },
+				html = { "prettier" },
+				css = { "prettier" },
 			},
 		},
 	},
@@ -176,6 +178,16 @@ return {
 	},
 
 	{
+		"nvim-flutter/flutter-tools.nvim",
+		lazy = false,
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"stevearc/dressing.nvim", -- optional for vim.ui.select
+		},
+		config = true,
+	},
+
+	{
 		"mason-org/mason-lspconfig.nvim",
 		dependencies = {
 			{ "neovim/nvim-lspconfig" },
@@ -192,16 +204,20 @@ return {
 					},
 				},
 				gopls = {},
-
+				gleam = {},
+				ocamllsp = {},
 				rust_analyzer = {},
 
-				intelephense = {}, -- Licence Key is set at ~/intelephense/licence.txt
+				sqlls = {},
 
+				intelephense = {}, -- Licence Key is set at ~/intelephense/licence.txt
 				ruby_lsp = {},
 
 				prismals = {},
 				html = {},
 				css = {},
+				somesass_ls = {},
+				unocss = {},
 				vtsls = { -- Typescript server that also support .vue files
 					settings = {
 						vtsls = {

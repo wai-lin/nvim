@@ -31,8 +31,7 @@ local function pop_rename()
 		on_submit = function(value)
 			print("Value submitted: ", value)
 
-			---@diagnostic disable-next-line: missing-parameter
-			local position_params = vim.lsp.util.make_position_params()
+			local position_params = vim.lsp.util.make_position_params(0, "utf-8")
 			---@diagnostic disable-next-line: inject-field
 			position_params.newName = value
 
